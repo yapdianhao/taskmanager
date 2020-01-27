@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../../assets/stylesheets/homepage.scss";
+import "../../assets/stylesheets/application.css";
+import Item from "./Item";
 
 class Search extends React.Component {
   constructor(props) {
@@ -52,13 +53,7 @@ class Search extends React.Component {
               Please select how urgent the desired task is
             </label>
             <div>
-              <select
-                className="custom-select"
-                //name="tag"
-                //id="selectTag"
-                //className="form-control"
-                onChange={this.filterList}
-              >
+              <select className="custom-select" onChange={this.filterList}>
                 <option value="None">select one:</option>
                 <option value="urgent">urgent</option>
                 <option value="intermediate">intermediate</option>
@@ -67,11 +62,29 @@ class Search extends React.Component {
             </div>
           </form>
           <div>
-            {this.state.filteredTask.map((task, index) => (
-              <div key={index}>
-                <h5 className="card-title">{task.name}</h5>
-              </div>
-            ))}
+            {this.state.filteredTask
+              .sort(function(a, b) {
+                if (a.year === b.year) {
+                  if (a.month === b.month) {
+                    return a.day < b.day ? -1 : 1;
+                  }
+                  return a.month < b.month ? -1 : 1;
+                }
+                return a.year < b.year ? -1 : 1;
+              })
+              .map((task, index) => (
+                <div key={index}>
+                  <div className="col-md-10 offset-md-1 pt-4 pb-4 text-center">
+                    <Item
+                      name={task.name}
+                      description={task.description}
+                      day={task.day}
+                      month={task.month}
+                      year={task.year}
+                    />
+                  </div>
+                </div>
+              ))}
           </div>
         </div>
       </div>

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../../assets/stylesheets/homepage.scss";
+import "../../assets/stylesheets/application.css";
 
 export default () => (
   //<div className=
