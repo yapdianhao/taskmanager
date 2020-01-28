@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../../assets/stylesheets/application.css";
+import SeparateTask from "./SeparateTask";
 
 class Tasks extends React.Component {
   constructor(props) {
@@ -27,8 +28,8 @@ class Tasks extends React.Component {
     const { tasks } = this.state;
     const allTasks = tasks.map((task, index) => (
       <div key={index} className="col-md-6 col-lg-4">
-        <div className="card-body border">
-          <h5 className="card-title">{task.name}</h5>
+        <div className="card border-danger">
+          <SeparateTask item={task} />
           <Link to={`/task/${task.id}`} className="btn custom-button">
             View Task
           </Link>
@@ -64,12 +65,9 @@ class Tasks extends React.Component {
           </li>
         </div>
         <div className="py-5">
-          <main className="container">
+          <div className="container">
             <div>{tasks.length > 0 ? allTasks : noTask}</div>
-            <Link to="/" className="btn btn-link">
-              Home
-            </Link>
-          </main>
+          </div>
         </div>
       </div>
     );
