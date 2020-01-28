@@ -19,6 +19,18 @@
   margin-left: 1em;
 }
 
+.navbar {
+  width: 100%;
+  list-style-type: none;
+  text-align: center;
+}
+
+.navbar li {
+  position: relative;
+  display: inline-block;
+  padding: 20px;
+}
+
 .title {
   padding-left: 0em;
 }
