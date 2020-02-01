@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../../assets/stylesheets/application.css";
-import SeparateTask from "./SeparateTask";
+import Separatetask from "./SeparateTask";
+import { tag } from "postcss-selector-parser";
 
 class Tasks extends React.Component {
   constructor(props) {
@@ -27,14 +28,15 @@ class Tasks extends React.Component {
   render() {
     const { tasks } = this.state;
     const allTasks = tasks.map((task, index) => (
-      <div key={index} className="col-md-6 col-lg-4">
-        <div className="card border-danger">
-          <SeparateTask item={task} />
-          <Link to={`/task/${task.id}`} className="btn custom-button">
-            View Task
-          </Link>
-        </div>
-      </div>
+      <Separatetask
+        name={task.name}
+        description={task.description}
+        day={task.day}
+        month={task.month}
+        year={task.year}
+        id={task.id}
+        tag={task.tag}
+      />
     ));
     const noTask = (
       <div className="vw-100 vh-50 d-flex align-items-center justify-content-center">
@@ -65,7 +67,7 @@ class Tasks extends React.Component {
           </li>
         </div>
         <div className="py-5">
-          <div className="container">
+          <div className="row">
             <div>{tasks.length > 0 ? allTasks : noTask}</div>
           </div>
         </div>

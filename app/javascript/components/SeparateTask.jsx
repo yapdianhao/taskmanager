@@ -20,8 +20,21 @@ class SeparateTask extends React.Component {
 
   render() {
     return (
-      <div className={this.getBorderColor()}>
-        <h5>this is a text</h5>
+      <div className="col-sm-6">
+        <div className="card">
+          <div className="card-body">
+            <h5 className="card-title">{this.props.name}</h5>
+            <p className="card-text">{this.props.description}</p>
+          </div>
+          <ul className="list-group list-group-flush">
+            <li className="list-group-item">
+              Deadline: {this.props.day}/{this.props.month}/{this.props.year}
+            </li>
+            <li className="list-group-item">
+              Imperativeness: {this.props.tag}
+            </li>
+          </ul>
+        </div>
       </div>
     );
   }
