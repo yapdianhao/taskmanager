@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "../../assets/stylesheets/application.css";
 import Separatetask from "./SeparateTask";
 import { tag } from "postcss-selector-parser";
+import { all } from "q";
 
 class Tasks extends React.Component {
   constructor(props) {
@@ -27,6 +28,22 @@ class Tasks extends React.Component {
 
   render() {
     const { tasks } = this.state;
+    const tempAllTasks = tasks.map((task, index) => (
+      <div className="col-md-6">
+        <div className="card">
+          <div className="card-body">
+            <h5 className="card-title">{task.name}</h5>
+            <p className="card-text">{task.description}</p>
+          </div>
+          <ul className="list-group list-group-flush">
+            <li className="list-group-item">
+              Deadline: {task.day}/{task.month}/{task.year}
+            </li>
+            <li className="list-group-item">Imperativeness: {task.tag}</li>
+          </ul>
+        </div>
+      </div>
+    ));
     const allTasks = tasks.map((task, index) => (
       <Separatetask
         name={task.name}
@@ -66,10 +83,8 @@ class Tasks extends React.Component {
             </div>
           </li>
         </div>
-        <div className="py-5">
-          <div className="row">
-            <div>{tasks.length > 0 ? allTasks : noTask}</div>
-          </div>
+        <div className="container">
+          <div className="row">{tasks.length > 0 ? allTasks : noTask}</div>
         </div>
       </div>
     );
