@@ -60,6 +60,13 @@ class NewTask extends React.Component {
     return days;
   }
 
+  createMonthOptions() {
+    var months = [];
+    for (var i = 0; i < 12; i++) {
+      months.push(<option>{i + 1}</option>);
+    }
+    return months;
+  }
   render() {
     return (
       <div className="container mt-5">
@@ -106,14 +113,16 @@ class NewTask extends React.Component {
               </div>
               <div className="form-group">
                 <label htmlFor="taskMonth">Todo Month</label>
-                <input
+                <select
                   type="number"
                   name="month"
                   id="taskMonth"
                   className="form-control"
                   required
                   onChange={this.onChange}
-                />
+                >
+                  {this.createMonthOptions()}
+                </select>
               </div>
               <div className="form-group">
                 <label htmlFor="taskYear">Todo Year</label>
