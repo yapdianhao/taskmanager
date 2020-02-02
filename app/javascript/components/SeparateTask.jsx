@@ -7,33 +7,38 @@ class SeparateTask extends React.Component {
     super(props);
   }
 
-  getBorderColor() {
+  getBackgroundColor() {
     switch (this.props.tag) {
       case "trivial":
-        return "separate separate-trivial";
+        return "bg-success border-success";
       case "intermediate":
-        return "separate separate-intermediate";
+        return "bg-warning border-warning";
       case "urgent":
-        return "separate-urgent";
+        return "bg-danger border-danger";
     }
   }
 
   render() {
     return (
       <div className="col-md-6">
-        <div className="card">
-          <div className="card-body">
-            <h5 className="card-title">{this.props.name}</h5>
-            <p className="card-text">{this.props.description}</p>
+        <div className="card mb-3">
+          <div className={this.getBackgroundColor()}>
+            <div className="card-body">
+              <h5 className="card-title">{this.props.name}</h5>
+              <p className="card-text">{this.props.description}</p>
+            </div>
+            <div className="card-body">
+              <ul className="list-group list-group-flush">
+                <li className="list-group-item">
+                  Deadline: {this.props.day}/{this.props.month}/
+                  {this.props.year}
+                </li>
+                <li className="list-group-item">
+                  Imperativeness: {this.props.tag}
+                </li>
+              </ul>
+            </div>
           </div>
-          <ul className="list-group list-group-flush">
-            <li className="list-group-item">
-              Deadline: {this.props.day}/{this.props.month}/{this.props.year}
-            </li>
-            <li className="list-group-item">
-              Imperativeness: {this.props.tag}
-            </li>
-          </ul>
         </div>
       </div>
     );
