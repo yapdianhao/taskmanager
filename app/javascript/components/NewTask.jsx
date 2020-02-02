@@ -52,6 +52,10 @@ class NewTask extends React.Component {
       .catch(error => console.log(error.message));
   }
 
+  getCurrYear() {
+    return new Date().getFullYear();
+  }
+
   createDayOptions() {
     var days = [];
     for (var i = 0; i < 31; i++) {
@@ -133,6 +137,8 @@ class NewTask extends React.Component {
                   className="form-control"
                   required
                   onChange={this.onChange}
+                  min={this.getCurrYear()}
+                  max={this.getCurrYear() + 10}
                 />
               </div>
               <div className="form-group">
