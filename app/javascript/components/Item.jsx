@@ -6,14 +6,36 @@ class Item extends React.Component {
     super(props);
   }
 
+  getBorderColor() {
+    switch (this.props.tag) {
+      case "trivial":
+        return "card border-success";
+      case "intermediate":
+        return "card border-warning";
+      case "urgent":
+        return "card border-danger";
+    }
+  }
+
+  getFontColor() {
+    switch (this.props.tag) {
+      case "trivial":
+        return "text-success";
+      case "intermediate":
+        return "text-warning";
+      case "urgent":
+        return "text-danger";
+    }
+  }
+
   render() {
     return (
       <div className="row">
         <div className="col-md-10 offset-md-1">
-          <div className="card border-danger">
+          <div className={this.getBorderColor()}>
             <div className="row">
               <div className="container">
-                <h4 class="card-header text-danger">{this.props.name}</h4>
+                <h4 class="card-header text-dange">{this.props.name}</h4>
                 <div class="card-body">
                   <h5 class="card-title">
                     Do by {this.props.day}/{this.props.month}/{this.props.year}

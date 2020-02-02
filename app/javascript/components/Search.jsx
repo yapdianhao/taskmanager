@@ -81,6 +81,7 @@ class Search extends React.Component {
                       day={task.day}
                       month={task.month}
                       year={task.year}
+                      tag={task.tag}
                     />
                   </div>
                 </div>
