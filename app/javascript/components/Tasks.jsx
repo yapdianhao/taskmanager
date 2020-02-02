@@ -28,22 +28,32 @@ class Tasks extends React.Component {
 
   render() {
     const { tasks } = this.state;
-    const tempAllTasks = tasks.map((task, index) => (
-      <div className="col-md-6">
-        <div className="card">
-          <div className="card-body">
-            <h5 className="card-title">{task.name}</h5>
-            <p className="card-text">{task.description}</p>
+    const tempAllTasks = tasks
+      .sort(function(a, b) {
+        if (a.year === b.year) {
+          if (a.month === b.month) {
+            return a.day < b.day ? -1 : 1;
+          }
+          return a.month < b.month ? -1 : 1;
+        }
+        return a.year < b.year ? -1 : 1;
+      })
+      .map((task, index) => (
+        <div className="col-md-6">
+          <div className="card">
+            <div className="card-body">
+              <h5 className="card-title">{task.name}</h5>
+              <p className="card-text">{task.description}</p>
+            </div>
+            <ul className="list-group list-group-flush">
+              <li className="list-group-item">
+                Deadline: {task.day}/{task.month}/{task.year}
+              </li>
+              <li className="list-group-item">Imperativeness: {task.tag}</li>
+            </ul>
           </div>
-          <ul className="list-group list-group-flush">
-            <li className="list-group-item">
-              Deadline: {task.day}/{task.month}/{task.year}
-            </li>
-            <li className="list-group-item">Imperativeness: {task.tag}</li>
-          </ul>
         </div>
-      </div>
-    ));
+      ));
     const allTasks = tasks.map((task, index) => (
       <Separatetask
         name={task.name}
