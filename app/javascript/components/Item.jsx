@@ -35,12 +35,14 @@ class Item extends React.Component {
           <div className={this.getBorderColor()}>
             <div className="row">
               <div className="container">
-                <h4 class="card-header text-dange">{this.props.name}</h4>
-                <div class="card-body">
-                  <h5 class="card-title">
+                <h4 className={"card-header " + this.getFontColor()}>
+                  {this.props.name}
+                </h4>
+                <div className="card-body">
+                  <h5 className="card-title">
                     Do by {this.props.day}/{this.props.month}/{this.props.year}
                   </h5>
-                  <p class="card-text">{this.props.description}</p>
+                  <p className="card-text">{this.props.description}</p>
                 </div>
               </div>
             </div>
