@@ -2,8 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../../assets/stylesheets/application.css";
 import Separatetask from "./SeparateTask";
-import { tag } from "postcss-selector-parser";
-import { all } from "q";
 
 class Tasks extends React.Component {
   constructor(props) {
