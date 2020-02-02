@@ -10,18 +10,18 @@ class SeparateTask extends React.Component {
   getBackgroundColor() {
     switch (this.props.tag) {
       case "trivial":
-        return "bg-success border-success";
+        return "bg-success border-success rounded shadow";
       case "intermediate":
-        return "bg-warning border-warning";
+        return "bg-warning border-warning rounded shadow";
       case "urgent":
-        return "bg-danger border-danger";
+        return "bg-danger border-danger rounded shadow";
     }
   }
 
   render() {
     return (
       <div className="col-md-6">
-        <div className="card mb-3">
+        <div className="card mb-5">
           <div className={this.getBackgroundColor()}>
             <div className="card-body">
               <h5 className="card-title">{this.props.name}</h5>

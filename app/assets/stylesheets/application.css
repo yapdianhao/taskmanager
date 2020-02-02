@@ -25,24 +25,6 @@
   flex-direction: row;
 }
 
-.separate {
-  width: 500px;
-  padding: 50px;
-  margin: 10px;
-}
-
-.separate-urgent {
-  border: 20px solid red;
-}
-
-.separate-intermediate {
-  border: 20px solid yellow;
-}
-
-.separate-trivial {
-  border: 20px solid green;
-}
-
 .navbar {
   width: 100%;
   list-style-type: none;
