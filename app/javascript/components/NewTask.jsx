@@ -151,6 +151,7 @@ class NewTask extends React.Component {
                   required
                   onChange={this.onChange}
                 >
+                  <option>Select level of urgency</option>
                   <option value="urgent">urgent</option>
                   <option value="intermediate">intermediate</option>
                   <option value="trivial">trivial</option>
