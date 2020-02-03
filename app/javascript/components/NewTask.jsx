@@ -83,6 +83,7 @@ class NewTask extends React.Component {
               <div className="form-group">
                 <label htmlFor="taskName">Name</label>
                 <input
+                  required
                   type="text"
                   name="name"
                   id="taskName"
@@ -94,6 +95,7 @@ class NewTask extends React.Component {
               <div className="form-group">
                 <label htmlFor="taskDescription">Details</label>
                 <input
+                  required
                   type="text"
                   name="description"
                   id="taskDescription"
@@ -105,6 +107,7 @@ class NewTask extends React.Component {
               <div className="form-group">
                 <label htmlFor="taskDay">Todo Day</label>
                 <select
+                  required
                   type="number"
                   name="day"
                   id="taskDay"
@@ -118,6 +121,7 @@ class NewTask extends React.Component {
               <div className="form-group">
                 <label htmlFor="taskMonth">Todo Month</label>
                 <select
+                  required
                   type="number"
                   name="month"
                   id="taskMonth"
@@ -131,6 +135,7 @@ class NewTask extends React.Component {
               <div className="form-group">
                 <label htmlFor="taskYear">Todo Year</label>
                 <input
+                  required
                   type="number"
                   name="year"
                   id="taskYear"
@@ -144,6 +149,7 @@ class NewTask extends React.Component {
               <div className="form-group">
                 <label htmlFor="taskTag">Task's importance</label>
                 <select
+                  required
                   type="string"
                   name="tag"
                   id="taskTag"
@@ -151,7 +157,9 @@ class NewTask extends React.Component {
                   required
                   onChange={this.onChange}
                 >
-                  <option>Select level of urgency</option>
+                  <option value="" selected disabled hidden>
+                    Select level of importance here
+                  </option>
                   <option value="urgent">urgent</option>
                   <option value="intermediate">intermediate</option>
                   <option value="trivial">trivial</option>
