@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "../../assets/stylesheets/application.css";
 
 class NewTask extends React.Component {
   constructor(props) {
@@ -73,8 +74,16 @@ class NewTask extends React.Component {
   }
   render() {
     return (
-      <div className="container mt-5">
-        <div className="row">
+      <div>
+        <div>
+          <Link
+            to="/"
+            className="btn btn-outline-primary waves-effect backbutton"
+          >
+            &#8249; Back
+          </Link>
+        </div>
+        <div className="row container mt-5">
           <div className="col-sm-12 col-lg-6 offset-lg-3">
             <h3 className="font-weight-normal mb-5">
               Please stop procastinating. Now you have one more in the queue.
@@ -165,12 +174,12 @@ class NewTask extends React.Component {
                   <option value="trivial">trivial</option>
                 </select>
               </div>
-              <button type="submit" className="btn btn-primary mt-3">
-                Create this task. Please stop procastinating.
-              </button>
-              <Link to="/tasks" className="btn btn-link mt-3">
-                Back to tasks menu
+              <Link to="/tasks" className="btn btn-danger">
+                Cancel
               </Link>
+              <button type="submit" className="btn btn-primary createbutton">
+                Create
+              </button>
             </form>
           </div>
         </div>
