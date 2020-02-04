@@ -34,9 +34,9 @@ class SeparateTask extends React.Component {
       <div className="col-md-6">
         <div className="card mb-5">
           <div className={this.getBackgroundColor()}>
-            <div className="card-body">
+            <div className="card-body text-center">
               <h5 className="card-title">{this.props.name}</h5>
-              <p className="card-text">{this.props.description}</p>
+              {/*<p className="card-text">{this.props.description}</p>*/}
             </div>
             <div className="card-body">
               <ul className="list-group list-group-flush">

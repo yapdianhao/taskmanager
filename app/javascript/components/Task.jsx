@@ -73,10 +73,15 @@ class Task extends React.Component {
             &#8249; Back
           </Link>
         </div>
-        <div className="col-sm-6 mx-auto">
+        <div className="col-sm-5 mx-auto">
           <div className="card text-center">
-            <div className="card-title pt-3">
-              <h3>{task.name}</h3>
+            <div className="card-body">
+              <div className="card-title pt-3">
+                <h3>{task.name}</h3>
+              </div>
+              <div className="card-text pt-4">
+                <p>{task.description}</p>
+              </div>
             </div>
           </div>
         </div>
