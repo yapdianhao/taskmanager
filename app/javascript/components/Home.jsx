@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "../../assets/stylesheets/application.css";
 
 export default () => (
-  <div className="jumbotron jumbotron-fluid bg-transparent">
+  <div className="jumbotron jumbotron-fluid bg-transparent homepage">
     <div className="container secondary-color">
       <h1 className="display-4">To-dos</h1>
       <p className="lead">Your task manager to address your procrastination</p>
