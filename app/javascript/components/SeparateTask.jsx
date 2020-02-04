@@ -18,6 +18,17 @@ class SeparateTask extends React.Component {
     }
   }
 
+  getButtonColor() {
+    switch (this.props.tag) {
+      case "trivial":
+        return "bg-success";
+      case "intermediate":
+        return "bg-warning";
+      case "urgent":
+        return "bg-danger";
+    }
+  }
+
   render() {
     return (
       <div className="col-md-6">
@@ -34,7 +45,15 @@ class SeparateTask extends React.Component {
                   {this.props.year}
                 </li>
                 <li className="list-group-item">
-                  Imperativeness: {this.props.tag}
+                  Importance: {this.props.tag}
+                </li>
+                <li className="list-group-item">
+                  <Link
+                    to={`/task/${this.props.id}`}
+                    className={"btn " + this.getButtonColor()}
+                  >
+                    View task
+                  </Link>
                 </li>
               </ul>
             </div>

@@ -47,7 +47,7 @@ class Tasks extends React.Component {
               <li className="list-group-item">
                 Deadline: {task.day}/{task.month}/{task.year}
               </li>
-              <li className="list-group-item">Imperativeness: {task.tag}</li>
+              <li className="list-group-item">Importance: {task.tag}</li>
               <li>
                 <Link to={`/task/${task.id}`} className="btn custom-button">
                   View Task
@@ -59,6 +59,7 @@ class Tasks extends React.Component {
       ));
     const allTasks = tasks.map((task, index) => (
       <Separatetask
+        key={index}
         name={task.name}
         description={task.description}
         day={task.day}

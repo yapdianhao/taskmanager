@@ -80,7 +80,7 @@ class NewTask extends React.Component {
             to="/"
             className="btn btn-outline-primary waves-effect backbutton"
           >
-            &#8249; Back
+            &#8249; Home
           </Link>
         </div>
         <div className="row container mt-2">
