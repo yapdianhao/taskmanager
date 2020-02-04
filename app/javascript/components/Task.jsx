@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "../../assets/stylesheets/application.css";
 
 class Task extends React.Component {
   constructor(props) {
@@ -76,10 +77,11 @@ class Task extends React.Component {
         <div className="col-sm-5 mx-auto">
           <div className="card text-center">
             <div className="card-body">
-              <div className="card-title pt-3">
+              <div className="card-title pt-3 pb-3">
                 <h3>{task.name}</h3>
               </div>
-              <div className="card-text pt-4">
+              <hr />
+              <div className="card-text pt-3 pb-3">
                 <p>{task.description}</p>
               </div>
             </div>
