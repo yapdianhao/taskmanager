@@ -65,38 +65,20 @@ class Task extends React.Component {
     const { task } = this.state;
     return (
       <div>
-        <div className="col-sm-12 col-lg-2 container py-5">
-          <h3>{task.name}</h3>
+        <div>
+          <Link
+            to="/"
+            className="btn btn-outline-primary waves-effect backbutton"
+          >
+            &#8249; Back
+          </Link>
         </div>
-        <div className="container py-5 justify-content-center align-items-center">
-          <div className="row">
-            <div className="col-sm-12 col-lg-2">
-              <h5>{task.description}</h5>
-              <h5>
-                {task.day}/{task.month}/{task.day}
-              </h5>
-              <h5 style={{ color: "red" }}>{task.tag}</h5>
+        <div className="col-sm-6 mx-auto">
+          <div className="card text-center">
+            <div className="card-title pt-3">
+              <h3>{task.name}</h3>
             </div>
           </div>
-        </div>
-        <div className="col-sm-12 col-lg-2 justify-content-center align-items-center">
-          <button
-            type="button"
-            className="btn btn-danger"
-            onClick={this.deleteTask}
-          >
-            Delete Task
-          </button>
-        </div>
-        <div className="col-sm-12 col-lg-2 justify-content-center align-items-center">
-          <Link to={`/tasks/${task.id}/edit`} className="btn btn-link">
-            Edit this task
-          </Link>
-        </div>
-        <div>
-          <Link to="/tasks" className="btn btn-link">
-            Back to tasks
-          </Link>
         </div>
       </div>
     );
