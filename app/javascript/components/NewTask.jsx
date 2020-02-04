@@ -83,10 +83,11 @@ class NewTask extends React.Component {
             &#8249; Back
           </Link>
         </div>
-        <div className="row container mt-5">
+        <div className="row container mt-2">
           <div className="col-sm-12 col-lg-6 offset-lg-3">
-            <h3 className="font-weight-normal mb-5">
-              Please stop procastinating. Now you have one more in the queue.
+            <h3 className="font-weight-normal mb-2">
+              Create a new task here. Please fill in the task name, details,
+              todo day, month, year, and select level of importance.
             </h3>
             <form onSubmit={this.onSubmit}>
               <div className="form-group">

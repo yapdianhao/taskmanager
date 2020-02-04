@@ -48,6 +48,11 @@ class Tasks extends React.Component {
                 Deadline: {task.day}/{task.month}/{task.year}
               </li>
               <li className="list-group-item">Imperativeness: {task.tag}</li>
+              <li>
+                <Link to={`/task/${task.id}`} className="btn custom-button">
+                  View Task
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
