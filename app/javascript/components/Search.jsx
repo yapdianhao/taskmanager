@@ -38,7 +38,7 @@ class Search extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="background full">
         <div>
           <Link
             to="/"
