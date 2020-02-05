@@ -95,7 +95,6 @@ class Task extends React.Component {
             &#8249; Back
           </Link>
         </div>
-
         <div className="row">
           <div className="col-sm-5 mx-auto">
             <div

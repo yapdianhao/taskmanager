@@ -59,22 +59,22 @@ class NewTask extends React.Component {
 
   createDayOptions() {
     var days = [];
-    for (var i = 0; i < 31; i++) {
-      days.push(<option>{i + 1}</option>);
+    for (var i = 1; i < 32; i++) {
+      days.push(<option>{i}</option>);
     }
     return days;
   }
 
   createMonthOptions() {
     var months = [];
-    for (var i = 0; i < 12; i++) {
-      months.push(<option>{i + 1}</option>);
+    for (var i = 1; i < 13; i++) {
+      months.push(<option>{i}</option>);
     }
     return months;
   }
   render() {
     return (
-      <div className="background">
+      <div className="background full">
         <div>
           <Link
             to="/"
@@ -125,6 +125,9 @@ class NewTask extends React.Component {
                   required
                   onChange={this.onChange}
                 >
+                  <option value="" selected disabled hidden>
+                    Select day
+                  </option>
                   {this.createDayOptions()}
                 </select>
               </div>
@@ -139,6 +142,9 @@ class NewTask extends React.Component {
                   required
                   onChange={this.onChange}
                 >
+                  <option value="" selected disabled hidden>
+                    Select month
+                  </option>
                   {this.createMonthOptions()}
                 </select>
               </div>
