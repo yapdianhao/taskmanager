@@ -74,7 +74,7 @@ class NewTask extends React.Component {
   }
   render() {
     return (
-      <div className="addtask">
+      <div className="background">
         <div>
           <Link
             to="/"
