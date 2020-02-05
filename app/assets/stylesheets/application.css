@@ -18,7 +18,7 @@
 
 .deletebutton {
   margin-top: 1em;
-  margin-left: 7em;
+  float: right;
 }
 
 html,
