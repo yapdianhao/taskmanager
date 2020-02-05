@@ -46,7 +46,7 @@ class Tasks extends React.Component {
       </div>
     );
     return (
-      <div className="background full">
+      <div className="background">
         <div className="navbar">
           <li>
             <div className="text-right mb-3">

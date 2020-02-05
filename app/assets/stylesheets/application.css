@@ -94,7 +94,7 @@ hr.black {
 }
 
 .createbutton {
-  margin-left: 23em !important;
+  float: right;
 }
 
 .navbar {
