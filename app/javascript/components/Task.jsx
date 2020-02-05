@@ -62,31 +62,70 @@ class Task extends React.Component {
       .catch(error => console.log(error.message));
   }
 
+  getBorderColor(tag) {
+    switch (tag) {
+      case "trivial":
+        return "border-success";
+      case "intermediate":
+        return "border-warning";
+      case "urgent":
+        return "border-danger";
+    }
+  }
+
+  getLineColor(tag) {
+    switch (tag) {
+      case "trivial":
+        return "green";
+      case "intermediate":
+        return "yellow";
+      case "urgent":
+        return "red";
+    }
+  }
   render() {
     const { task } = this.state;
     return (
-      <div>
+      <div className="task full">
         <div>
           <Link
-            to="/"
-            className="btn btn-outline-primary waves-effect backbutton"
+            to="/tasks"
+            className="btn btn-outline-primary waves-effect taskbackbutton"
           >
             &#8249; Back
           </Link>
         </div>
-        <div className="col-sm-5 mx-auto">
-          <div className="card text-center">
-            <div className="card-body">
-              <div className="card-title pt-3 pb-3">
-                <h3>{task.name}</h3>
-              </div>
-              <hr />
-              <div className="card-text pt-3 pb-3">
-                <p>{task.description}</p>
+        {/*
+          <div className="row">
+            <div className="col-sm-5 mx-auto">
+              <div
+                className={
+                  "card border-5 text-center " + this.getBorderColor(task.tag)
+                }
+              >
+                <div className="card-body">
+                  <div className="card-title pt-3 pb-3">
+                    <h3>{task.name}</h3>
+                  </div>
+                  <hr className={this.getLineColor(task.tag)} />
+                  <div className="card-text pt-3 pb-3">
+                    <p>Description: {task.description}</p>
+                  </div>
+                  <hr className={this.getLineColor(task.tag)} />
+                  <div className="card-text pt-3 pb-3">
+                    <p>
+                      Deadline: {task.day}/{task.month}/{task.year}
+                    </p>
+                  </div>
+                  <hr className={this.getLineColor(task.tag)} />
+                  <div className="card-text pt-3 pb-3">
+                    Importance: {task.tag}
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+              <div className="container"></div>*/}
       </div>
     );
   }
