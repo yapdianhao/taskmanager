@@ -38,6 +38,9 @@ class Task extends React.Component {
   }
 
   deleteTask() {
+    {
+      console.log("task deleted");
+    }
     const {
       match: {
         params: { id }
@@ -122,6 +125,16 @@ class Task extends React.Component {
                 </div>
               </div>
             </div>
+            <Link to={`/tasks/${task.id}/edit`} className="btn btn-link">
+              Edit this task
+            </Link>
+            <button
+              type="button"
+              className="btn btn-danger"
+              onClick={this.deleteTask}
+            >
+              Delete Task
+            </button>
           </div>
         </div>
         <div className="container"></div>
