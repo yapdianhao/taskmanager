@@ -12,8 +12,13 @@
   background-size: cover;
 }
 
+.editbutton {
+  margin-top: 1em;
+}
+
 .deletebutton {
   margin-top: 1em;
+  margin-left: 7em;
 }
 
 html,

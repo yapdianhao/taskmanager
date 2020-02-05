@@ -125,12 +125,15 @@ class Task extends React.Component {
                 </div>
               </div>
             </div>
-            <Link to={`/tasks/${task.id}/edit`} className="btn btn-link">
+            <Link
+              to={`/tasks/${task.id}/edit`}
+              className="btn btn-success editbutton"
+            >
               Edit this task
             </Link>
             <button
               type="button"
-              className="btn btn-danger"
+              className="btn btn-danger deletebutton"
               onClick={this.deleteTask}
             >
               Delete Task
