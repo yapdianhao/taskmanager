@@ -10,6 +10,7 @@
   height: 100%;
   background-position: center;
   background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .editbutton {
@@ -43,8 +44,6 @@ body {
 .full {
   width: 100%;
   position: absolute;
-  top: 0;
-  left: 0;
 }
 
 .task {

@@ -24,6 +24,14 @@ class Tasks extends React.Component {
       .catch(() => this.props.history.push("/"));
   }
 
+  getBackground(tasks) {
+    if (tasks.length <= 2) {
+      return "full";
+    } else {
+      return "";
+    }
+  }
+
   render() {
     const { tasks } = this.state;
     const allTasks = tasks.map((task, index) => (
@@ -46,7 +54,7 @@ class Tasks extends React.Component {
       </div>
     );
     return (
-      <div className="background">
+      <div className={"background " + this.getBackground(tasks)}>
         <div className="navbar">
           <li>
             <div className="text-right mb-3">
