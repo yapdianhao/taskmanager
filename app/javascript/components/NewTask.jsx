@@ -72,6 +72,7 @@ class NewTask extends React.Component {
     }
     return months;
   }
+
   render() {
     return (
       <div className="background full">

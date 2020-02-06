@@ -47,10 +47,8 @@ class Tasks extends React.Component {
       />
     ));
     const noTask = (
-      <div className="vw-100 vh-50 d-flex align-items-center justify-content-center">
-        <h4>
-          No task yet. Create a new one <Link to="/task">here</Link>
-        </h4>
+      <div className="mx-auto align-items-center justify-content-center mt-40">
+        No pending task yet. Good job!
       </div>
     );
     return (
