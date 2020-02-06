@@ -6,7 +6,7 @@ export default () => (
   <div className="jumbotron jumbotron-fluid bg-transparent background">
     <div className="container secondary-color">
       <h1 className="display-4">To-dos</h1>
-      <p className="lead">Your task manager to address your procrastination</p>
+      <p className="lead">Your task manager</p>
       <hr className="my-4" />
       <Link to="/tasks" className="btn btn-outline-primary waves-effect">
         View To-do Tasks
