@@ -1,12 +1,12 @@
 .background {
-  background-image: url(images/book.jpg);
+  background-image: url(../../../images/book.jpg);
   height: 100%;
   background-position: center;
   background-size: cover;
 }
 
 .addtask {
-  background-image: url(images/sky.jpg);
+  background-image: url(../../../images/sky.jpg);
   height: 100%;
   background-position: center;
   background-size: cover;
