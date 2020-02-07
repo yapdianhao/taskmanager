@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../../assets/stylesheets/application.css";
-import "bootstrap";
 
 export default () => (
   <div className="jumbotron jumbotron-fluid bg-transparent background">
