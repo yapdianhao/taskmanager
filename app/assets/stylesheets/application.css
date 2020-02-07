@@ -1,16 +1,8 @@
 .background {
-  background-image: url(../../../images/book.jpg);
+  background-image: url(../images/book.jpg);
   height: 100%;
   background-position: center;
   background-size: cover;
-}
-
-.addtask {
-  background-image: url(../../../images/sky.jpg);
-  height: 100%;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
 }
 
 .editbutton {
@@ -32,13 +24,6 @@ body {
 .taskbackbutton {
   margin-left: 1em;
   margin-top: 1em;
-}
-
-.tasks {
-  background-image: url(../../../images/cloud.jpg);
-  height: 100%;
-  background-position: center;
-  background-size: cover;
 }
 
 .full {
