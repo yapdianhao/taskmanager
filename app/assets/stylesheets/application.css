@@ -1,5 +1,5 @@
 .background {
-  background-image: url(<%= asset_path "book.jpg" %>);
+  background-image: url(../images/book.jpg);
   height: 100%;
   background-position: center;
   background-size: cover;
@@ -29,6 +29,13 @@ body {
 .full {
   width: 100%;
   position: absolute;
+}
+
+.task {
+  background-image: url(../../../images/cup.jpg);
+  height: 100%;
+  background-position: center;
+  background-size: cover;
 }
 
 hr.white {
