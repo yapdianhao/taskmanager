@@ -1,5 +1,5 @@
 .background {
-  background-image: asset-data-url("book.jpg");
+  background-image: url("/assets/book.jpg");
   height: 100%;
   background-position: center;
   background-size: cover;
