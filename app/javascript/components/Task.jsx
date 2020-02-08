@@ -2,6 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../../assets/stylesheets/application.css";
 
+/**
+ * The constructor of the task, consists of the name, the description,
+ * the day of deadline, the month, the year, and the tag which is how urgent it is.
+ */
 class Task extends React.Component {
   constructor(props) {
     super(props);
@@ -37,6 +41,9 @@ class Task extends React.Component {
       .catch(() => this.props.history.push("/tasks"));
   }
 
+  /**
+   * The function to delete a task.
+   */
   deleteTask() {
     {
       console.log("task deleted");
@@ -65,6 +72,10 @@ class Task extends React.Component {
       .catch(error => console.log(error.message));
   }
 
+  /**
+   * Determines the border of the task based on the importance.
+   * @param {importance} tag
+   */
   getBorderColor(tag) {
     switch (tag) {
       case "trivial":
@@ -76,16 +87,6 @@ class Task extends React.Component {
     }
   }
 
-  getLineColor(tag) {
-    switch (tag) {
-      case "trivial":
-        return "green";
-      case "intermediate":
-        return "yellow";
-      case "urgent":
-        return "red";
-    }
-  }
   render() {
     const { task } = this.state;
     return (

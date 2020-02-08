@@ -2,6 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../../assets/stylesheets/application.css";
 
+/**
+ * Constructor of the edit page. The default value is passed as the attribute.
+ */
 class EditTask extends React.Component {
   constructor(props) {
     super(props);
@@ -17,6 +20,10 @@ class EditTask extends React.Component {
     this.onSubmit = this.onSubmit.bind(this);
   }
 
+  /**
+   * Adds the created task to the queue upon submission
+   * @param {The submitted value} event
+   */
   onSubmit(event) {
     event.preventDefault();
     const {
@@ -54,14 +61,24 @@ class EditTask extends React.Component {
       .catch(error => console.log(error.message));
   }
 
+  /**
+   * Fires at the moment when the value is changed.
+   * @param {The entered value} event
+   */
   onChange(event) {
     this.setState({ [event.target.name]: event.target.value });
   }
 
+  /**
+   * Returns the current year, for limiting purposes
+   */
   getCurrYear() {
     return new Date().getFullYear();
   }
 
+  /**
+   * Creates a list of options of 31 days.
+   */
   createDayOptions() {
     var days = [];
     for (var i = 1; i < 32; i++) {
@@ -70,6 +87,9 @@ class EditTask extends React.Component {
     return days;
   }
 
+  /**
+   * Creates a list of options of 12 months.
+   */
   createMonthOptions() {
     var months = [];
     for (var i = 1; i < 13; i++) {
@@ -96,6 +116,9 @@ class EditTask extends React.Component {
       .catch(() => this.props.history.push(`/task/${response.id}`));
   }
 
+  /**
+   * Returns what is seen on the screen.
+   */
   render() {
     //const { name, description, day, month, year, tag } = this.state;
     return (

@@ -2,11 +2,17 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../../assets/stylesheets/application.css";
 
+/**
+ * The constructor of the individual task seen in the task menu.
+ */
 class SeparateTask extends React.Component {
   constructor(props) {
     super(props);
   }
 
+  /**
+   * Determines the background color of the task based on importance.
+   */
   getBackgroundColor() {
     switch (this.props.tag) {
       case "trivial":
@@ -18,6 +24,9 @@ class SeparateTask extends React.Component {
     }
   }
 
+  /**
+   * Determines the button color of the the task.
+   */
   getButtonColor() {
     switch (this.props.tag) {
       case "trivial":
@@ -29,6 +38,9 @@ class SeparateTask extends React.Component {
     }
   }
 
+  /**
+   * Returns what is seen on the screen.
+   */
   render() {
     return (
       <div className="col-md-6">
