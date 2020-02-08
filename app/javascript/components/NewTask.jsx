@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../../assets/stylesheets/application.css.erb";
+import "../../assets/stylesheets/application.css";
 
 class NewTask extends React.Component {
   constructor(props) {
