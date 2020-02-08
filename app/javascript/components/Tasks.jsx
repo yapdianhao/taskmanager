@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import "../../assets/stylesheets/application.css";
 import Separatetask from "./SeparateTask";
 
+/**
+ * The constructor for the task menu.
+ */
 class Tasks extends React.Component {
   constructor(props) {
     super(props);
@@ -24,6 +27,11 @@ class Tasks extends React.Component {
       .catch(() => this.props.history.push("/"));
   }
 
+  /**
+   * Determines the background image rendered based on the number
+   * of current tasks. If it is only in a row, return a full image.
+   * @param {number of current tasks} tasks
+   */
   getBackground(tasks) {
     if (tasks.length <= 2) {
       return "full";
@@ -32,6 +40,9 @@ class Tasks extends React.Component {
     }
   }
 
+  /**
+   * Returns what is seen on the screen.
+   */
   render() {
     const { tasks } = this.state;
     const allTasks = tasks.map((task, index) => (

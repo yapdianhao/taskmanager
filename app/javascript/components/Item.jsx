@@ -1,11 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+/**
+ * The constructor of rendering a task after searching.
+ */
 class Item extends React.Component {
   constructor(props) {
     super(props);
   }
 
+  /**
+   * Determines the color of the border of the task based on importance.
+   * Red: Danger
+   * Yellow: Intermediate
+   * Green: Trivial
+   */
   getBorderColor() {
     switch (this.props.tag) {
       case "trivial":
@@ -17,6 +26,9 @@ class Item extends React.Component {
     }
   }
 
+  /**
+   * Determines the color of the task based on importance.
+   */
   getFontColor() {
     switch (this.props.tag) {
       case "trivial":
@@ -28,6 +40,9 @@ class Item extends React.Component {
     }
   }
 
+  /**
+   * Returns what is seen on the screen
+   */
   render() {
     return (
       <div className="row">

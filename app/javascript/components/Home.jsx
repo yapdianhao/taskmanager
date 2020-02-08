@@ -2,6 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../../assets/stylesheets/application.css";
 
+/**
+ * The homepage.
+ */
 export default () => (
   <div className="jumbotron jumbotron-fluid bg-transparent background">
     <div className="container secondary-color">

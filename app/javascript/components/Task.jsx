@@ -87,6 +87,9 @@ class Task extends React.Component {
     }
   }
 
+  /**
+   * Returns what is seen on the screen.
+   */
   render() {
     const { task } = this.state;
     return (

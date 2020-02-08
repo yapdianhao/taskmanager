@@ -2,6 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../../assets/stylesheets/application.css";
 
+/**
+ * Constructor for the interface of creating a new task.
+ */
 class NewTask extends React.Component {
   constructor(props) {
     super(props);
@@ -17,10 +20,20 @@ class NewTask extends React.Component {
     this.onSubmit = this.onSubmit.bind(this);
   }
 
+  /**
+   * Fires at the moment when the value entered is changed.
+   * Changes the attribute according to the given value.
+   * @param {The value entered} event
+   */
   onChange(event) {
     this.setState({ [event.target.name]: event.target.value });
   }
 
+  /**
+   * Fires upon clicking submit.
+   * The new task gets added to the queue.
+   * @param {The action} event
+   */
   onSubmit(event) {
     event.preventDefault();
     const url = "/api/v1/tasks/create";
@@ -53,10 +66,16 @@ class NewTask extends React.Component {
       .catch(error => console.log(error.message));
   }
 
+  /**
+   * Returns the current year.
+   */
   getCurrYear() {
     return new Date().getFullYear();
   }
 
+  /**
+   * Creates a list of 31 days options.
+   */
   createDayOptions() {
     var days = [];
     for (var i = 1; i < 32; i++) {
@@ -65,6 +84,9 @@ class NewTask extends React.Component {
     return days;
   }
 
+  /**
+   * Creates a list of 12 months options.
+   */
   createMonthOptions() {
     var months = [];
     for (var i = 1; i < 13; i++) {
@@ -73,6 +95,9 @@ class NewTask extends React.Component {
     return months;
   }
 
+  /**
+   * Returns what is seen on the screen.
+   */
   render() {
     return (
       <div className="background full">

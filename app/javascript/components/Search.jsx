@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import "../../assets/stylesheets/application.css";
 import Item from "./Item";
 
+/**
+ * The constructor of the search interface.
+ */
 class Search extends React.Component {
   constructor(props) {
     super(props);
@@ -13,6 +16,10 @@ class Search extends React.Component {
     this.filterList = this.filterList.bind(this);
   }
 
+  /**
+   * Filters the current tasks based on the key in the name entered by user.
+   * @param {The search key} event
+   */
   filterList(event) {
     let filteredTask = this.state.tasks;
     filteredTask = filteredTask.filter(task => {
@@ -36,6 +43,9 @@ class Search extends React.Component {
       .catch(() => this.props.history.push("/"));
   }
 
+  /**
+   * Returns what is seen in the screen.
+   */
   render() {
     return (
       <div className="background full">
