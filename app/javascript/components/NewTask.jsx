@@ -100,7 +100,7 @@ class NewTask extends React.Component {
    */
   render() {
     return (
-      <div className="background full">
+      <div className="background">
         <div>
           <Link
             to="/"
